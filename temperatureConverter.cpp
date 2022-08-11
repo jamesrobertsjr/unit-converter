@@ -29,11 +29,13 @@ int main()
 
     do
     {
+        // Displays options to user.
         cout << "(A) - Convert Fahrenheit to Celsius\n"; 
         cout << "(B) - Convert Celsius to Fahrenheit\n";
         cout << "Enter A or B: ";
         cin >> conversionSelection;
 
+        // Converts user entry to capital letters, then feeds it into switch statement.
         switch (toupper(conversionSelection))
         {
             case f_to_c:
