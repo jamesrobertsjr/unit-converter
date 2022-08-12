@@ -27,6 +27,8 @@ int main() {
     char yesNo = '\0';
 
     do {
+        cout << fixed << setprecision(2);
+
         // Displays options to user.
         cout << "(A) - Convert Fahrenheit to Celsius\n"; 
         cout << "(B) - Convert Celsius to Fahrenheit\n";
