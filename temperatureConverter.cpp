@@ -72,6 +72,16 @@ double celsiusToFahrenheit(double ctemp) {
     return fahrenheit;
 }
 
+double mphToKmh(double mph) {
+    double kmh = mph * 1.609344;
+    return kmh;
+}
+
+double kmhToMph(double kmh) {
+    double mph = kmh / 1.609344;
+    return mph;
+}
+
 // Validates user entry for re-running program.
 char validateRunAgain (char yesNo) {
     while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N') {
