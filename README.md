@@ -1,2 +1,2 @@
 # temperature-converter
- This program converts temperature units.
+ This program converts units of measurement.

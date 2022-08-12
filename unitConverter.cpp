@@ -1,5 +1,5 @@
 //
-// temperatureConverter.cpp
+// unitConverter.cpp
 // Author: jameserv
 //
 
