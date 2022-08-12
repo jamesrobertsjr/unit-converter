@@ -13,17 +13,16 @@ using namespace std;
 
 // Constants.
 const string USER_INPUT_ERROR = "ERROR. Invalid entry. Please try again.";
-const char f_to_c = 'A';
-const char c_to_f = 'B';
 
 // Function prototypes.
 double fahrenheitToCelsius(double);
 double celsiusToFahrenheit(double);
+double mphToKmh(double);
+double kmhToMph(double);
 char validateRunAgain (char);
 
 int main() {
     char conversionSelection = '\0';
-    
     char yesNo = '\0';
 
     do {
@@ -36,8 +35,8 @@ int main() {
         cin >> conversionSelection;
 
         switch (toupper(conversionSelection)) {
-            
-            case 'T':
+            case 'T': 
+            {
                 char temperatureConversionSelection = '\0';
                 double ftemp = 0.0, ctemp = 0.0;
                 do {
@@ -47,13 +46,13 @@ int main() {
                     cin >> temperatureConversionSelection;
 
                     switch (toupper(temperatureConversionSelection)) {
-                        case f_to_c:
+                        case 'A':
                             cout << "Enter a temperature value in Fahrenheit: ";
                             cin >> ftemp;
                             cout << "Converted to Celsius: ";
                             cout << fahrenheitToCelsius(ftemp) << "ºC" << endl;
                             break;
-                        case c_to_f:
+                        case 'B':
                             cout << "Enter a temperature value in Celsius: ";
                             cin >> ctemp;
                             cout << "Converted to Fahrenheit: "; 
@@ -68,9 +67,10 @@ int main() {
                     cin >> yesNo;
                 } while (validateRunAgain(yesNo) == 'Y');
                 break;
-
-            case 'S':
-                char speedConversionSelection = '\n';
+            }
+            case 'S': 
+            {
+                char speedConversionSelection = '\0';
                 double mph = 0, kmh = 0;
                 do {
                     cout << "(A) - Convert Miles per Hour (MPH) to Kilometers an Hour (KMH)\n";
@@ -95,43 +95,21 @@ int main() {
                             cout << USER_INPUT_ERROR << endl;
                             break;
                     }
-
+                
                     cout << "Would you like to enter another speed? (Y or N) ";
                     cin >> yesNo;
                 } while (validateRunAgain(yesNo) == 'Y');
-
-            default:
+                break;
+            }
+            default: 
+            {
                 cout << USER_INPUT_ERROR << endl;
                 break;
+            }
         }
 
-        // // Displays options to user.
-        // cout << "(A) - Convert Fahrenheit to Celsius\n"; 
-        // cout << "(B) - Convert Celsius to Fahrenheit\n";
-        // cout << "Enter A or B: ";
-        // cin >> temperatureConversionSelection;
-
-        // // Converts user entry to capital letters, then feeds it into switch statement.
-        // switch (toupper(temperatureConversionSelection)) {
-        //     case f_to_c:
-        //         cout << "Enter a temperature value in Fahrenheit: ";
-        //         cin >> ftemp;
-        //         cout << "Converted to Celsius: ";
-        //         cout << fahrenheitToCelsius(ftemp) << "ºC" << endl;
-        //         break;
-        //     case c_to_f:
-        //         cout << "Enter a temperature value in Celsius: ";
-        //         cin >> ctemp;
-        //         cout << "Converted to Fahrenheit: "; 
-        //         cout << celsiusToFahrenheit(ctemp) << "ºF" << endl;
-        //         break;
-        //     default:
-        //         cout << USER_INPUT_ERROR << endl;
-        //         break;
-        // }
-
-        // cout << "Would you like to enter another temperature? (Y or N) ";
-        // cin >> yesNo;
+        cout << "Would you like to execute a different conversion? (Y or N) ";
+        cin >> yesNo;
 
     } while (validateRunAgain(yesNo) == 'Y');
     
