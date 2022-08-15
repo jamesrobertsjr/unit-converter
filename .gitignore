@@ -34,3 +34,7 @@
 # Other
 .DS_Store
 .vscode
+unitConverter.dSYM/Contents/Resources/DWARF/unitConverter
+unitConverter.dSYM/Contents/Resources/DWARF/temperatureConverter
+unitConverter
+unitConverter.dSYM/Contents/Info.plist
