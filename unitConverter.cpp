@@ -31,7 +31,8 @@ int main() {
         cout << "What would you like to convert?\n";
         cout << "(T) - Temperature\n";
         cout << "(S) - Speed\n";
-        cout << "Enter T or S: ";
+        cout << "(D) - Distance";
+        cout << "Enter T, S, or D: ";
         cin >> conversionSelection;
 
         switch (toupper(conversionSelection)) {
@@ -100,6 +101,15 @@ int main() {
                     cin >> yesNo;
                 } while (validateRunAgain(yesNo) == 'Y');
                 break;
+            }
+            case 'D':
+            {
+                do {
+
+
+                    cout << "Would you like to enter another distance? (Y or N) ";
+                    cin >> yesNo;
+                } while (validateRunAgain(yesNo) == 'Y');
             }
             default: 
             {
