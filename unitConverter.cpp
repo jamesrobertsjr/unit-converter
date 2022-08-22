@@ -104,8 +104,10 @@ int main() {
             }
             case 'D':
             {
+                char distanceConversionSelection = '\0';
+                double miles = 0, kilometers = 0;
                 do {
-
+                    
 
                     cout << "Would you like to enter another distance? (Y or N) ";
                     cin >> yesNo;
