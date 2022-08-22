@@ -19,7 +19,10 @@ double fahrenheitToCelsius(double);
 double celsiusToFahrenheit(double);
 double mphToKmh(double);
 double kmhToMph(double);
+double milesToKilometers(double miles);
+double kilometersToMiles(double kilometers);
 char validateRunAgain (char);
+
 
 int main() {
     char conversionSelection = '\0';
@@ -107,7 +110,27 @@ int main() {
                 char distanceConversionSelection = '\0';
                 double miles = 0, kilometers = 0;
                 do {
-                    
+                    cout << "(A) - Convert Miles to Kilometers\n";
+                    cout << "(B) - Convert Kilometers to Miles\n";
+                    cin >> distanceConversionSelection;
+
+                    switch (toupper(distanceConversionSelection)) {
+                        case 'A':
+                            cout << "Enter a distance value in Miles: ";
+                            cin >> miles;
+                            cout << "Converted to Kilometers: ";
+                            cout << milesToKilometers(miles) << " KM" << endl;
+                            break;
+                        case 'B':
+                            cout << "Enter a distance value in Kilometers: ";
+                            cin >> kilometers;
+                            cout << "Converted to Miles: ";
+                            cout << kilometersToMiles(kilometers) << " Miles" << endl;
+                            break;
+                        default:
+                            cout << USER_INPUT_ERROR << endl;
+                            break;
+                    }
 
                     cout << "Would you like to enter another distance? (Y or N) ";
                     cin >> yesNo;
@@ -146,6 +169,16 @@ double mphToKmh(double mph) {
 double kmhToMph(double kmh) {
     double mph = kmh / 1.609344;
     return mph;
+}
+
+double milesToKilometers(double miles) {
+    double kilometers = 0;
+    return kilometers;
+}
+
+double kilometersToMiles(double kilometers) {
+    double miles = 0;
+    return miles;
 }
 
 // Validates user entry for re-running program.
