@@ -34,7 +34,7 @@ int main() {
         cout << "What would you like to convert?\n";
         cout << "(T) - Temperature\n";
         cout << "(S) - Speed\n";
-        cout << "(D) - Distance";
+        cout << "(D) - Distance\n";
         cout << "Enter T, S, or D: ";
         cin >> conversionSelection;
 
@@ -172,12 +172,12 @@ double kmhToMph(double kmh) {
 }
 
 double milesToKilometers(double miles) {
-    double kilometers = 0;
+    double kilometers = miles * 1.609344;
     return kilometers;
 }
 
 double kilometersToMiles(double kilometers) {
-    double miles = 0;
+    double miles = kilometers / 1.609344;
     return miles;
 }
 
