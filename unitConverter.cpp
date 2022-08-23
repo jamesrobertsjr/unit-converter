@@ -11,7 +11,6 @@
 #include <string>
 using namespace std;
 
-// Constants.
 const string USER_INPUT_ERROR = "ERROR. Invalid entry. Please try again.";
 
 // Function prototypes.
