@@ -19,8 +19,8 @@ double fahrenheitToCelsius(double);
 double celsiusToFahrenheit(double);
 double mphToKmh(double);
 double kmhToMph(double);
-double milesToKilometers(double miles);
-double kilometersToMiles(double kilometers);
+double milesToKilometers(double);
+double kilometersToMiles(double);
 char validateRunAgain (char);
 
 
