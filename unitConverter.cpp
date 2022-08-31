@@ -146,7 +146,6 @@ int main() {
         cin >> yesNo;
 
     } while (validateRunAgain(yesNo) == 'Y');
-    
     return 0;
 }
 
