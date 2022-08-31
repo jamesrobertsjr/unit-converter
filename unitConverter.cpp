@@ -29,7 +29,6 @@ int main() {
 
     do {
         cout << fixed << setprecision(2);
-
         cout << "What would you like to convert?\n";
         cout << "(T) - Temperature\n";
         cout << "(S) - Speed\n";
