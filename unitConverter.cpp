@@ -186,6 +186,5 @@ char validateRunAgain (char yesNo) {
         cout << USER_INPUT_ERROR << endl;
         cin >> yesNo;
     }
-
     return toupper(yesNo);
 }
