@@ -98,10 +98,10 @@ int main() {
                     std::cout << "Enter a speed with the unit (example: '60 MPH' or '100 KMH'): ";
                     std::cin >> speed >> speedUnit;
 
-                    if (speedUnit == "MPH") {
+                    if (speedUnit == "MPH" || speedUnit == "mph") {
                         std::cout << "Converted to KMH: ";
                         std::cout << mphToKmh(speed) << std::endl;
-                    } else if (speedUnit == "KMH") {
+                    } else if (speedUnit == "KMH" || speedUnit == "kmh") {
                         std::cout << "Converted to MPH: ";
                         std::cout << kmhToMph(speed) << std::endl;
                     } else {
@@ -148,10 +148,12 @@ int main() {
                     std::cout << "Enter a distance with the unit (example: '15 M' or '30 KM'): ";
                     std::cin >> distance >> distanceUnit;
 
-                    if (distanceUnit == "M") {
+                    if (distanceUnit == "M" || distanceUnit == "m" || 
+                            distanceUnit == "Miles" || distanceUnit == "miles") {
                         std::cout << "Converted to Kilometers: ";
                         std::cout << milesToKilometers(distance) << " KM" << std::endl;
-                    } else if (distanceUnit == "KM") {
+                    } else if (distanceUnit == "KM" || distanceUnit == "km" || 
+                            distanceUnit == "Kilometers" || distanceUnit == "kilometers") {
                         std::cout << "Converted to Miles: ";
                         std::cout << kilometersToMiles(distance) << " Miles" << std::endl;
                     } else {
