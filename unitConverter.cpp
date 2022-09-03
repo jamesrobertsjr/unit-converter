@@ -11,7 +11,7 @@
 #include <string>
 using namespace std;
 
-const string USER_INPUT_ERROR = "ERROR. Invalid entry. Please try again.";
+const string USER_INPUT_ERROR = "ERROR: Invalid entry. Please try again.";
 
 // Function prototypes.
 double fahrenheitToCelsius(double);
