@@ -22,7 +22,6 @@ double milesToKilometers(double);
 double kilometersToMiles(double);
 char validateRunAgain (char);
 
-
 int main() {
     char conversionSelection = '\0';
     char yesNo = '\0';
