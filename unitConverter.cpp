@@ -37,8 +37,8 @@ int main() {
         switch (toupper(conversionSelection)) {
             case 'T': 
             {
-                char temperatureConversionSelection = '\0';
-                double ftemp = 0.0, ctemp = 0.0;
+                // char temperatureConversionSelection = '\0';
+                // double ftemp = 0.0, ctemp = 0.0;
                 double temp = 0.0;
                 char tempUnit = '\0';
 
@@ -46,7 +46,7 @@ int main() {
                     std::cout << "Enter a temperature value with unit (example: '32 F' or '0 C'): ";
                     std::cin >> temp >> tempUnit;
 
-                    switch (tempUnit) {
+                    switch (toupper(tempUnit)) {
                         case 'F':
                             std::cout << "Converted to Celsius: ";
                             std::cout << fahrenheitToCelsius(temp) << "Cº\n";
