@@ -117,10 +117,8 @@ int main() {
                 break;
             }
         }
-
         std::cout << "Would you like to execute a different conversion? (Y or N) ";
         std::cin >> yesNo;
-
     } while (validateRunAgain(yesNo) == 'Y');
     return 0;
 }
