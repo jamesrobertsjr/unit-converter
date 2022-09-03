@@ -89,31 +89,47 @@ int main() {
             }
             case 'S': 
             {
-                char speedConversionSelection = '\0';
-                double mph = 0, kmh = 0;
-                do {
-                    std::cout << "(A) - Convert Miles per Hour (MPH) to Kilometers an Hour (KMH)\n";
-                    std::cout << "(B) - Convert Kilometers an Hour (KMH) to Miles per Hour (MPH)\n";
-                    std::cout << "Enter A or B: ";
-                    std::cin >> speedConversionSelection;
+                // char speedConversionSelection = '\0';
+                // double mph = 0, kmh = 0;
+                double speed = 0.0;
+                std::string speedUnit = "\0";
 
-                    switch (toupper(speedConversionSelection)) {
-                        case 'A':
-                            std::cout << "Enter a speed value in Miles per Hour (MPH): ";
-                            std::cin >> mph;
-                            std::cout << "Converted to KMH: ";
-                            std::cout << mphToKmh(mph) << " KMH" << std::endl;
-                            break;
-                        case 'B':
-                            std::cout << "Enter a speed value in Kilometers an Hour (KMH): ";
-                            std::cin >> kmh;
-                            std::cout << "Converted to MPH: ";
-                            std::cout << kmhToMph(kmh) << " MPH" << std::endl;
-                            break;
-                        default:
-                            std::cout << USER_INPUT_ERROR << std::endl;
-                            break;
+                do {
+                    std::cout << "Enter a speed with the unit (example: '60 MPH' or '100 KMH'): ";
+                    std::cin >> speed >> speedUnit;
+
+                    if (speedUnit == "MPH") {
+                        std::cout << "Converted to KMH: ";
+                        std::cout << mphToKmh(speed) << std::endl;
+                    } else if (speedUnit == "KMH") {
+                        std::cout << "Converted to MPH: ";
+                        std::cout << kmhToMph(speed) << std::endl;
+                    } else {
+                        std::cout << USER_INPUT_ERROR << std::endl;
                     }
+
+                    // std::cout << "(A) - Convert Miles per Hour (MPH) to Kilometers an Hour (KMH)\n";
+                    // std::cout << "(B) - Convert Kilometers an Hour (KMH) to Miles per Hour (MPH)\n";
+                    // std::cout << "Enter A or B: ";
+                    // std::cin >> speedConversionSelection;
+
+                    // switch (toupper(speedConversionSelection)) {
+                    //     case 'A':
+                    //         std::cout << "Enter a speed value in Miles per Hour (MPH): ";
+                    //         std::cin >> mph;
+                    //         std::cout << "Converted to KMH: ";
+                    //         std::cout << mphToKmh(mph) << " KMH" << std::endl;
+                    //         break;
+                    //     case 'B':
+                    //         std::cout << "Enter a speed value in Kilometers an Hour (KMH): ";
+                    //         std::cin >> kmh;
+                    //         std::cout << "Converted to MPH: ";
+                    //         std::cout << kmhToMph(kmh) << " MPH" << std::endl;
+                    //         break;
+                    //     default:
+                    //         std::cout << USER_INPUT_ERROR << std::endl;
+                    //         break;
+                    // }
                 
                     std::cout << "Would you like to enter another speed? (Y or N) ";
                     std::cin >> yesNo;
