@@ -138,30 +138,47 @@ int main() {
             }
             case 'D':
             {
-                char distanceConversionSelection = '\0';
-                double miles = 0, kilometers = 0;
-                do {
-                    std::cout << "(A) - Convert Miles to Kilometers\n";
-                    std::cout << "(B) - Convert Kilometers to Miles\n";
-                    std::cin >> distanceConversionSelection;
+                // char distanceConversionSelection = '\0';
+                // double miles = 0, kilometers = 0;
+                double distance = 0.0;
+                std::string distanceUnit = "\0";
 
-                    switch (toupper(distanceConversionSelection)) {
-                        case 'A':
-                            std::cout << "Enter a distance value in Miles: ";
-                            std::cin >> miles;
-                            std::cout << "Converted to Kilometers: ";
-                            std::cout << milesToKilometers(miles) << " KM" << std::endl;
-                            break;
-                        case 'B':
-                            std::cout << "Enter a distance value in Kilometers: ";
-                            std::cin >> kilometers;
-                            std::cout << "Converted to Miles: ";
-                            std::cout << kilometersToMiles(kilometers) << " Miles" << std::endl;
-                            break;
-                        default:
-                            std::cout << USER_INPUT_ERROR << std::endl;
-                            break;
+                do {
+                    std::cout << "NOTE: Program currently supports miles and kilometers.\n";
+                    std::cout << "Enter a distance with the unit (example: '15 M' or '30 KM'): ";
+                    std::cin >> distance >> distanceUnit;
+
+                    if (distanceUnit == "M") {
+                        std::cout << "Converted to Kilometers: ";
+                        std::cout << milesToKilometers(distance) << " KM" << std::endl;
+                    } else if (distanceUnit == "KM") {
+                        std::cout << "Converted to Miles: ";
+                        std::cout << kilometersToMiles(distance) << " Miles" << std::endl;
+                    } else {
+                        std::cout << USER_INPUT_ERROR << std::endl;
                     }
+
+                    // std::cout << "(A) - Convert Miles to Kilometers\n";
+                    // std::cout << "(B) - Convert Kilometers to Miles\n";
+                    // std::cin >> distanceConversionSelection;
+
+                    // switch (toupper(distanceConversionSelection)) {
+                    //     case 'A':
+                    //         std::cout << "Enter a distance value in Miles: ";
+                    //         std::cin >> miles;
+                    //         std::cout << "Converted to Kilometers: ";
+                    //         std::cout << milesToKilometers(miles) << " KM" << std::endl;
+                    //         break;
+                    //     case 'B':
+                    //         std::cout << "Enter a distance value in Kilometers: ";
+                    //         std::cin >> kilometers;
+                    //         std::cout << "Converted to Miles: ";
+                    //         std::cout << kilometersToMiles(kilometers) << " Miles" << std::endl;
+                    //         break;
+                    //     default:
+                    //         std::cout << USER_INPUT_ERROR << std::endl;
+                    //         break;
+                    // }
 
                     std::cout << "Would you like to enter another distance? (Y or N) ";
                     std::cin >> yesNo;
