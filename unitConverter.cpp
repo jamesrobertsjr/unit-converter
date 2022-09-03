@@ -37,11 +37,8 @@ int main() {
         switch (toupper(conversionSelection)) {
             case 'T': 
             {
-                // char temperatureConversionSelection = '\0';
-                // double ftemp = 0.0, ctemp = 0.0;
                 double temp = 0.0;
                 char tempUnit = '\0';
-
                 do {
                     std::cout << "Enter a temperature value with unit (example: '32 F' or '0 C'): ";
                     std::cin >> temp >> tempUnit;
@@ -58,30 +55,6 @@ int main() {
                         default:
                             std::cout << USER_INPUT_ERROR << std::endl;
                     }
-
-                    // cout << "(A) - Convert Fahrenheit to Celsius\n"; 
-                    // cout << "(B) - Convert Celsius to Fahrenheit\n";
-                    // cout << "Enter A or B: ";
-                    // cin >> temperatureConversionSelection;
-
-                    // switch (toupper(temperatureConversionSelection)) {
-                    //     case 'A':
-                    //         cout << "Enter a temperature value in Fahrenheit: ";
-                    //         cin >> ftemp;
-                    //         cout << "Converted to Celsius: ";
-                    //         cout << fahrenheitToCelsius(ftemp) << "ºC" << endl;
-                    //         break;
-                    //     case 'B':
-                    //         cout << "Enter a temperature value in Celsius: ";
-                    //         cin >> ctemp;
-                    //         cout << "Converted to Fahrenheit: "; 
-                    //         cout << celsiusToFahrenheit(ctemp) << "ºF" << endl;
-                    //         break;
-                    //     default:
-                    //         cout << USER_INPUT_ERROR << endl;
-                    //         break;
-                    // }
-
                     std::cout << "Would you like to enter another temperature? (Y or N) ";
                     std::cin >> yesNo;
                 } while (validateRunAgain(yesNo) == 'Y');
@@ -107,30 +80,6 @@ int main() {
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
-
-                    // std::cout << "(A) - Convert Miles per Hour (MPH) to Kilometers an Hour (KMH)\n";
-                    // std::cout << "(B) - Convert Kilometers an Hour (KMH) to Miles per Hour (MPH)\n";
-                    // std::cout << "Enter A or B: ";
-                    // std::cin >> speedConversionSelection;
-
-                    // switch (toupper(speedConversionSelection)) {
-                    //     case 'A':
-                    //         std::cout << "Enter a speed value in Miles per Hour (MPH): ";
-                    //         std::cin >> mph;
-                    //         std::cout << "Converted to KMH: ";
-                    //         std::cout << mphToKmh(mph) << " KMH" << std::endl;
-                    //         break;
-                    //     case 'B':
-                    //         std::cout << "Enter a speed value in Kilometers an Hour (KMH): ";
-                    //         std::cin >> kmh;
-                    //         std::cout << "Converted to MPH: ";
-                    //         std::cout << kmhToMph(kmh) << " MPH" << std::endl;
-                    //         break;
-                    //     default:
-                    //         std::cout << USER_INPUT_ERROR << std::endl;
-                    //         break;
-                    // }
-                
                     std::cout << "Would you like to enter another speed? (Y or N) ";
                     std::cin >> yesNo;
                 } while (validateRunAgain(yesNo) == 'Y');
@@ -138,8 +87,6 @@ int main() {
             }
             case 'D':
             {
-                // char distanceConversionSelection = '\0';
-                // double miles = 0, kilometers = 0;
                 double distance = 0.0;
                 std::string distanceUnit = "\0";
 
@@ -159,32 +106,10 @@ int main() {
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
-
-                    // std::cout << "(A) - Convert Miles to Kilometers\n";
-                    // std::cout << "(B) - Convert Kilometers to Miles\n";
-                    // std::cin >> distanceConversionSelection;
-
-                    // switch (toupper(distanceConversionSelection)) {
-                    //     case 'A':
-                    //         std::cout << "Enter a distance value in Miles: ";
-                    //         std::cin >> miles;
-                    //         std::cout << "Converted to Kilometers: ";
-                    //         std::cout << milesToKilometers(miles) << " KM" << std::endl;
-                    //         break;
-                    //     case 'B':
-                    //         std::cout << "Enter a distance value in Kilometers: ";
-                    //         std::cin >> kilometers;
-                    //         std::cout << "Converted to Miles: ";
-                    //         std::cout << kilometersToMiles(kilometers) << " Miles" << std::endl;
-                    //         break;
-                    //     default:
-                    //         std::cout << USER_INPUT_ERROR << std::endl;
-                    //         break;
-                    // }
-
                     std::cout << "Would you like to enter another distance? (Y or N) ";
                     std::cin >> yesNo;
                 } while (validateRunAgain(yesNo) == 'Y');
+                break;
             }
             default: 
             {
