@@ -62,8 +62,6 @@ int main() {
             }
             case 'S': 
             {
-                // char speedConversionSelection = '\0';
-                // double mph = 0, kmh = 0;
                 double speed = 0.0;
                 std::string speedUnit = "\0";
 
