@@ -19,6 +19,7 @@ double mphToKmh(double);
 double kmhToMph(double);
 double milesToKilometers(double);
 double kilometersToMiles(double);
+void displayConversions(std::string, double, std::string);
 char askToRunAgain(std::string);
 char validateRunAgain (char);
 
@@ -45,15 +46,14 @@ int main() {
 
                     switch (toupper(tempUnit)) {
                         case 'F':
-                            std::cout << "Converted to Celsius: ";
-                            std::cout << fahrenheitToCelsius(temp) << "Cº\n";
+                            displayConversions("Celsius", fahrenheitToCelsius(temp), "ºC");
                             break;
                         case 'C':
-                            std::cout << "Converted to Fahrenheit: ";
-                            std::cout << celsiusToFahrenheit(temp) << "Fº\n";
+                            displayConversions("Fahrenheit", celsiusToFahrenheit(temp), "ºF");
                             break;
                         default:
                             std::cout << USER_INPUT_ERROR << std::endl;
+                            break;
                     }
                 } while (validateRunAgain(askToRunAgain("temperature")) == 'Y');
                 break;
@@ -62,17 +62,14 @@ int main() {
             {
                 double speed = 0.0;
                 std::string speedUnit = "\0";
-
                 do {
                     std::cout << "Enter a speed with the unit (example: '60 MPH' or '100 KMH'): ";
                     std::cin >> speed >> speedUnit;
 
                     if (speedUnit == "MPH" || speedUnit == "mph") {
-                        std::cout << "Converted to KMH: ";
-                        std::cout << mphToKmh(speed) << std::endl;
+                        displayConversions("KMH", mphToKmh(speed), "\0");
                     } else if (speedUnit == "KMH" || speedUnit == "kmh") {
-                        std::cout << "Converted to MPH: ";
-                        std::cout << kmhToMph(speed) << std::endl;
+                        displayConversions("MPH", kmhToMph(speed), "\0");
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
@@ -83,20 +80,15 @@ int main() {
             {
                 double distance = 0.0;
                 std::string distanceUnit = "\0";
-
                 do {
                     std::cout << "NOTE: Program currently supports miles and kilometers.\n";
                     std::cout << "Enter a distance with the unit (example: '15 M' or '30 KM'): ";
                     std::cin >> distance >> distanceUnit;
-
-                    if (distanceUnit == "M" || distanceUnit == "m" || 
-                            distanceUnit == "Miles" || distanceUnit == "miles") {
-                        std::cout << "Converted to Kilometers: ";
-                        std::cout << milesToKilometers(distance) << " KM" << std::endl;
-                    } else if (distanceUnit == "KM" || distanceUnit == "km" || 
-                            distanceUnit == "Kilometers" || distanceUnit == "kilometers") {
-                        std::cout << "Converted to Miles: ";
-                        std::cout << kilometersToMiles(distance) << " Miles" << std::endl;
+                    
+                    if (distanceUnit == "M" || distanceUnit == "m") {
+                        displayConversions("Kilometers", milesToKilometers(distance), "KM");
+                    } else if (distanceUnit == "KM" || distanceUnit == "km") {
+                        displayConversions("Miles", kilometersToMiles(distance), "Miles");
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
@@ -141,6 +133,10 @@ double milesToKilometers(double miles) {
 double kilometersToMiles(double kilometers) {
     double miles = kilometers / 1.609344;
     return miles;
+}
+
+void displayConversions(std::string unit, double conversion, std::string abbreviatedUnit) {
+    std::cout << "Converted to " << unit << ": " << conversion << " " << abbreviatedUnit << std::endl;
 }
 
 char askToRunAgain(std::string unit) {
