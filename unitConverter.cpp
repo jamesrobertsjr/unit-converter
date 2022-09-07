@@ -43,6 +43,7 @@ int main() {
                 do {
                     std::cout << "Enter a temperature value with unit (example: '32 F' or '0 C'): ";
                     std::cin >> temp >> tempUnit;
+
                     switch (toupper(tempUnit)) {
                         case 'F':
                             displayConversions("Celsius", fahrenheitToCelsius(temp), "ºC");
@@ -83,7 +84,7 @@ int main() {
                     std::cout << "NOTE: Program currently supports miles and kilometers.\n";
                     std::cout << "Enter a distance with the unit (example: '15 M' or '30 KM'): ";
                     std::cin >> distance >> distanceUnit;
-
+                    
                     if (distanceUnit == "M" || distanceUnit == "m") {
                         displayConversions("Kilometers", milesToKilometers(distance), "KM");
                     } else if (distanceUnit == "KM" || distanceUnit == "km") {
