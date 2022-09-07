@@ -19,6 +19,7 @@ double mphToKmh(double);
 double kmhToMph(double);
 double milesToKilometers(double);
 double kilometersToMiles(double);
+void displayConversions(std::string, double, std::string);
 char askToRunAgain(std::string);
 char validateRunAgain (char);
 
@@ -45,12 +46,14 @@ int main() {
 
                     switch (toupper(tempUnit)) {
                         case 'F':
-                            std::cout << "Converted to Celsius: ";
-                            std::cout << fahrenheitToCelsius(temp) << "Cº\n";
+                            displayConversions("Celsius", fahrenheitToCelsius(temp), "ºC");
+                            // std::cout << "Converted to Celsius: ";
+                            // std::cout << fahrenheitToCelsius(temp) << "Cº\n";
                             break;
                         case 'C':
-                            std::cout << "Converted to Fahrenheit: ";
-                            std::cout << celsiusToFahrenheit(temp) << "Fº\n";
+                            displayConversions("Fahrenheit", celsiusToFahrenheit(temp), "ºF");
+                            // std::cout << "Converted to Fahrenheit: ";
+                            // std::cout << celsiusToFahrenheit(temp) << "Fº\n";
                             break;
                         default:
                             std::cout << USER_INPUT_ERROR << std::endl;
@@ -141,6 +144,10 @@ double milesToKilometers(double miles) {
 double kilometersToMiles(double kilometers) {
     double miles = kilometers / 1.609344;
     return miles;
+}
+
+void displayConversions(std::string unit, double conversion, std::string abbreviatedUnit) {
+    std::cout << "Converted to " << unit << ": " << conversion << " " << abbreviatedUnit << std::endl;
 }
 
 char askToRunAgain(std::string unit) {
