@@ -76,8 +76,6 @@ int main() {
                         // std::cout << mphToKmh(speed) << std::endl;
                     } else if (speedUnit == "KMH" || speedUnit == "kmh") {
                         displayConversions("MPH", kmhToMph(speed), "\0");
-                        // std::cout << "Converted to MPH: ";
-                        // std::cout << kmhToMph(speed) << std::endl;
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
@@ -96,8 +94,6 @@ int main() {
 
                     if (distanceUnit == "M" || distanceUnit == "m") {
                         displayConversions("Kilometers", milesToKilometers(distance), "KM");
-                        // std::cout << "Converted to Kilometers: ";
-                        // std::cout << milesToKilometers(distance) << " KM" << std::endl;
                     } else if (distanceUnit == "KM" || distanceUnit == "km") {
                         displayConversions("Miles", kilometersToMiles(distance), "Miles");
                     } else {
