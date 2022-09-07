@@ -19,6 +19,7 @@ double mphToKmh(double);
 double kmhToMph(double);
 double milesToKilometers(double);
 double kilometersToMiles(double);
+char askToRunAgain(std::string unit);
 char validateRunAgain (char);
 
 int main() {
@@ -149,6 +150,13 @@ double milesToKilometers(double miles) {
 double kilometersToMiles(double kilometers) {
     double miles = kilometers / 1.609344;
     return miles;
+}
+
+char askToRunAgain(std::string unit) {
+    char yesNo;
+    std::cout << "Would you like to enter another " << unit << "? (Y or N) ";
+    std::cin >> yesNo;
+    return yesNo;
 }
 
 // Validates user entry for re-running program.
