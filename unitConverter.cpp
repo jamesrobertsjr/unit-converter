@@ -52,6 +52,7 @@ int main() {
                             break;
                         default:
                             std::cout << USER_INPUT_ERROR << std::endl;
+                            break;
                     }
                 } while (validateRunAgain(askToRunAgain("temperature")) == 'Y');
                 break;
