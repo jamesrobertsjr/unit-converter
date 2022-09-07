@@ -96,12 +96,14 @@ int main() {
 
                     if (distanceUnit == "M" || distanceUnit == "m" || 
                             distanceUnit == "Miles" || distanceUnit == "miles") {
-                        std::cout << "Converted to Kilometers: ";
-                        std::cout << milesToKilometers(distance) << " KM" << std::endl;
+                        displayConversions("Kilometers", milesToKilometers(distance), "KM");
+                        // std::cout << "Converted to Kilometers: ";
+                        // std::cout << milesToKilometers(distance) << " KM" << std::endl;
                     } else if (distanceUnit == "KM" || distanceUnit == "km" || 
                             distanceUnit == "Kilometers" || distanceUnit == "kilometers") {
-                        std::cout << "Converted to Miles: ";
-                        std::cout << kilometersToMiles(distance) << " Miles" << std::endl;
+                        displayConversions("Miles", kilometersToMiles(distance), "Miles");
+                        // std::cout << "Converted to Miles: ";
+                        // std::cout << kilometersToMiles(distance) << " Miles" << std::endl;
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
