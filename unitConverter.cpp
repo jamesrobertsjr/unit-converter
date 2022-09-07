@@ -47,13 +47,9 @@ int main() {
                     switch (toupper(tempUnit)) {
                         case 'F':
                             displayConversions("Celsius", fahrenheitToCelsius(temp), "ºC");
-                            // std::cout << "Converted to Celsius: ";
-                            // std::cout << fahrenheitToCelsius(temp) << "Cº\n";
                             break;
                         case 'C':
                             displayConversions("Fahrenheit", celsiusToFahrenheit(temp), "ºF");
-                            // std::cout << "Converted to Fahrenheit: ";
-                            // std::cout << celsiusToFahrenheit(temp) << "Fº\n";
                             break;
                         default:
                             std::cout << USER_INPUT_ERROR << std::endl;
