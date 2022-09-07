@@ -43,7 +43,6 @@ int main() {
                 do {
                     std::cout << "Enter a temperature value with unit (example: '32 F' or '0 C'): ";
                     std::cin >> temp >> tempUnit;
-
                     switch (toupper(tempUnit)) {
                         case 'F':
                             displayConversions("Celsius", fahrenheitToCelsius(temp), "ºC");
@@ -61,7 +60,6 @@ int main() {
             {
                 double speed = 0.0;
                 std::string speedUnit = "\0";
-
                 do {
                     std::cout << "Enter a speed with the unit (example: '60 MPH' or '100 KMH'): ";
                     std::cin >> speed >> speedUnit;
@@ -80,7 +78,6 @@ int main() {
             {
                 double distance = 0.0;
                 std::string distanceUnit = "\0";
-
                 do {
                     std::cout << "NOTE: Program currently supports miles and kilometers.\n";
                     std::cout << "Enter a distance with the unit (example: '15 M' or '30 KM'): ";
