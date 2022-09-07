@@ -19,12 +19,11 @@ double mphToKmh(double);
 double kmhToMph(double);
 double milesToKilometers(double);
 double kilometersToMiles(double);
-char askToRunAgain(std::string unit);
+char askToRunAgain(std::string);
 char validateRunAgain (char);
 
 int main() {
     char conversionSelection = '\0';
-    char yesNo = '\0';
 
     do {
         std::cout << std::fixed << std::setprecision(2);
@@ -56,9 +55,7 @@ int main() {
                         default:
                             std::cout << USER_INPUT_ERROR << std::endl;
                     }
-                    std::cout << "Would you like to enter another temperature? (Y or N) ";
-                    std::cin >> yesNo;
-                } while (validateRunAgain(yesNo) == 'Y');
+                } while (validateRunAgain(askToRunAgain("temperature")) == 'Y');
                 break;
             }
             case 'S': 
@@ -79,9 +76,7 @@ int main() {
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
-                    std::cout << "Would you like to enter another speed? (Y or N) ";
-                    std::cin >> yesNo;
-                } while (validateRunAgain(yesNo) == 'Y');
+                } while (validateRunAgain(askToRunAgain("speed")) == 'Y');
                 break;
             }
             case 'D':
@@ -105,9 +100,7 @@ int main() {
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
-                    std::cout << "Would you like to enter another distance? (Y or N) ";
-                    std::cin >> yesNo;
-                } while (validateRunAgain(yesNo) == 'Y');
+                } while (validateRunAgain(askToRunAgain("distance")) == 'Y');
                 break;
             }
             default: 
@@ -116,9 +109,7 @@ int main() {
                 break;
             }
         }
-        std::cout << "Would you like to execute a different conversion? (Y or N) ";
-        std::cin >> yesNo;
-    } while (validateRunAgain(yesNo) == 'Y');
+    } while (validateRunAgain(askToRunAgain("(different) conversion")) == 'Y');
     return 0;
 }
 
