@@ -94,16 +94,12 @@ int main() {
                     std::cout << "Enter a distance with the unit (example: '15 M' or '30 KM'): ";
                     std::cin >> distance >> distanceUnit;
 
-                    if (distanceUnit == "M" || distanceUnit == "m" || 
-                            distanceUnit == "Miles" || distanceUnit == "miles") {
+                    if (distanceUnit == "M" || distanceUnit == "m") {
                         displayConversions("Kilometers", milesToKilometers(distance), "KM");
                         // std::cout << "Converted to Kilometers: ";
                         // std::cout << milesToKilometers(distance) << " KM" << std::endl;
-                    } else if (distanceUnit == "KM" || distanceUnit == "km" || 
-                            distanceUnit == "Kilometers" || distanceUnit == "kilometers") {
+                    } else if (distanceUnit == "KM" || distanceUnit == "km") {
                         displayConversions("Miles", kilometersToMiles(distance), "Miles");
-                        // std::cout << "Converted to Miles: ";
-                        // std::cout << kilometersToMiles(distance) << " Miles" << std::endl;
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
