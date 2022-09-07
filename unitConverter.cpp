@@ -72,8 +72,6 @@ int main() {
 
                     if (speedUnit == "MPH" || speedUnit == "mph") {
                         displayConversions("KMH", mphToKmh(speed), "\0");
-                        // std::cout << "Converted to KMH: ";
-                        // std::cout << mphToKmh(speed) << std::endl;
                     } else if (speedUnit == "KMH" || speedUnit == "kmh") {
                         displayConversions("MPH", kmhToMph(speed), "\0");
                     } else {
