@@ -71,11 +71,13 @@ int main() {
                     std::cin >> speed >> speedUnit;
 
                     if (speedUnit == "MPH" || speedUnit == "mph") {
-                        std::cout << "Converted to KMH: ";
-                        std::cout << mphToKmh(speed) << std::endl;
+                        displayConversions("KMH", mphToKmh(speed), "\0");
+                        // std::cout << "Converted to KMH: ";
+                        // std::cout << mphToKmh(speed) << std::endl;
                     } else if (speedUnit == "KMH" || speedUnit == "kmh") {
-                        std::cout << "Converted to MPH: ";
-                        std::cout << kmhToMph(speed) << std::endl;
+                        displayConversions("MPH", kmhToMph(speed), "\0");
+                        // std::cout << "Converted to MPH: ";
+                        // std::cout << kmhToMph(speed) << std::endl;
                     } else {
                         std::cout << USER_INPUT_ERROR << std::endl;
                     }
