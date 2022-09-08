@@ -25,15 +25,16 @@ char validateRunAgain (char);
 
 int main() {
     char conversionSelection = '\0';
+    int desiredDecimals = 0;
 
     do {
-        std::cout << std::fixed << std::setprecision(2);
         std::cout << "What would you like to convert?\n";
         std::cout << "(T) - Temperature\n";
         std::cout << "(S) - Speed\n";
         std::cout << "(D) - Distance\n";
-        std::cout << "Enter T, S, or D: ";
-        std::cin >> conversionSelection;
+        std::cout << "Enter T, S, or D, and enter desired number of decimal places (example: 'T 5'): ";
+        std::cin >> conversionSelection >> desiredDecimals;
+        std::cout << std::fixed << std::setprecision(desiredDecimals);
 
         switch (toupper(conversionSelection)) {
             case 'T': 
