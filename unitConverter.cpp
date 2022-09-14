@@ -21,7 +21,7 @@ double milesToKilometers(double);
 double kilometersToMiles(double);
 void displayConversions(std::string, double, std::string);
 char askToRunAgain(std::string);
-char validateRunAgain (char);
+char validateRunAgain(char);
 
 int main() {
     char conversionSelection = '\0';
@@ -148,8 +148,14 @@ char askToRunAgain(std::string unit) {
 }
 
 // Validates user entry for re-running program.
-char validateRunAgain (char yesNo) {
-    while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N') {
+bool validateRunAgainBool(char yesNo) {
+    if (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N') {
+        return false;
+    } else return true;
+}
+
+char validateRunAgain(char yesNo) {
+    while (validateRunAgainBool(yesNo) == false) {
         std::cout << USER_INPUT_ERROR << std::endl;
         std::cin >> yesNo;
     }
